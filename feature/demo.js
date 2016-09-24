@@ -1,20 +1,9 @@
-1、关于引用和值
-在js采用两种方式来保存数据：值和引用。
-5种基本类型(String,number,boolean,null,undefined，其原始值都直接复制到变量中。
-原始值的特点：按照值进行赋值。
-没有保存原始值的变量中保存的是对象的引用。
-
-引用是指向对象（Array,Date或者其他）所在内存位置的指针。实际的对象（Array,Date）被称作指称目标。
-
-指称目标是一种存在多种语言中的强大特性，它提高了效率：两个或者多个变量不需要各自拥有某个对象的副本。
-他们只需要指向同一个对象即可。
-demo1:指向同一个对象的多个变量
 /**
 *demo:指向同一个对象的多个变量
 */
 var hg_obj = {}; //采用{}子面量比new Object()创建一个对象更加简单
 var ref = hg_obj; //hg_obj,ref都指向了同一个对象
-hg_obj.title = 'daheige';
+hg_obj.title = 'daheige';//为hg_obj追加对象属性
 console.log(hg_obj);
 console.log(ref);
 /*运行结果
@@ -22,7 +11,9 @@ console.log(ref);
 { title: 'daheige' }
 */
 
-demo2:自修改对象
+/**
+*自修改对象(如果两个对象都指向同一个指称目标，一个发生改变另一个也会发生改变）
+*/
 var hg_arr = [1,2,3];
 var itemref = hg_arr;//创建数组的引用
 itemref.push(5);//通过修改itemref本身
@@ -35,11 +26,16 @@ itemref: [ 1, 2, 3, 5 ]
 true
 */
 
-demo3:维护完整性的同时修改对象的引用
+/**维护完整性的同时修改对象的引用**/
 var hg_list = ['fefe','daheige'];
 var hg_ref = hg_list;
 //将hg_list重新指向一个对象
 hg_list = ['new fefe','new heige'];//这里hg_ref指向已发生改变
 console.log(hg_list,hg_ref);//[ 'new fefe', 'new heige' ] [ 'fefe', 'daheige' ]
+
+
+
+
+
 
 
