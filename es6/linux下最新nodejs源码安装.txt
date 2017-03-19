@@ -1,0 +1,72 @@
+下载地址：https://nodejs.org/dist/latest-v0.12.x/node-v0.12.15-linux-x64.tar.gz
+
+下面方法适用于：https://nodejs.org/dist/latest-v6.x/node-v6.5.0-linux-x64.tar.gz
+
+安装方法：
+通过linux下载方法：
+cd /usr/local/
+wget https://nodejs.org/dist/latest-v0.12.x/node-v0.12.15-linux-x64.tar.gz
+cd /usr/local/
+tar xvf node-v0.12.15-linux-x64.tar.gz
+mv node-v0.12.15-linux-x64 nodejs
+
+[root@localhost local]# ll
+总用量 16592
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 bin
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 etc
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 games
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 include
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 lib
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 lib64
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 libexec
+drwxrwxr-x  6 heige heige     4096 6月  24 00:55 node-v0.12.15
+drwxr-xr-x  6 root  root      4096 8月  22 03:16 python2.7
+-rw-r--r--  1 root  root  16935960 6月  26 06:04 Python-2.7.12.tgz
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 sbin
+drwxr-xr-x. 5 root  root      4096 8月  20 12:39 share
+drwxr-xr-x. 2 root  root      4096 9月  23 2011 src
+
+vim /etc/profile
+export NODE_HOME=/usr/local/nodejs
+export PATH=$PATH:$NODE_HOME:$NODE_HOME/bin:$NODE_HOME/lib/node_modules
+
+[root@localhost local]# source /etc/profile
+[root@localhost local]# cd
+[root@localhost ~]# node -v
+v0.12.15
+[root@localhost ~]# npm -v
+2.15.1
+
+如果你安装的是新版
+[root@localhost ~]# node -v
+v6.5.0
+[root@localhost ~]# npm -v
+3.10.3
+[root@localhost ~]#
+
+
+nodejs下载列表：
+https://nodejs.org/dist/
+
+最新版下载地址：
+
+32位：https://nodejs.org/dist/latest-v6.x/node-v6.5.0-linux-x86.tar.gz
+64位：https://nodejs.org/dist/latest-v6.x/node-v6.5.0-linux-x64.tar.gz
+
+
+对于ubuntu系统  sudo apt-get install nodejs nodejs-legacy
+然后安装npm
+sudo apt-get install npm
+
+
+找不到系统变量npm,node建立软连接：
+sudo ln -s /usr/local/nodejs/bin/node /usr/bin/node
+sudo ln -s /usr/local/nodejs/bin/npm /usr/bin/npm
+
+
+
+
+
+
+
+
