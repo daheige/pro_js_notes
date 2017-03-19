@@ -28,7 +28,7 @@ drwxr-xr-x. 2 root  root      4096 9月  23 2011 src
 
 vim /etc/profile
 export NODE_HOME=/usr/local/nodejs
-export PATH=$PATH:$NODE_HOME:$NODE_HOME/bin:$NODE_HOME/lib/node_modules
+export PATH=$PATH:$NODE_HOME/bin
 
 [root@localhost local]# source /etc/profile
 [root@localhost local]# cd
@@ -52,17 +52,6 @@ https://nodejs.org/dist/
 
 32位：https://nodejs.org/dist/latest-v6.x/node-v6.5.0-linux-x86.tar.gz
 64位：https://nodejs.org/dist/latest-v6.x/node-v6.5.0-linux-x64.tar.gz
-
-
-对于ubuntu系统  sudo apt-get install nodejs nodejs-legacy
-然后安装npm
-sudo apt-get install npm
-
-
-找不到系统变量npm,node建立软连接：
-sudo ln -s /usr/local/nodejs/bin/node /usr/bin/node
-sudo ln -s /usr/local/nodejs/bin/npm /usr/bin/npm
-
 
 
 
