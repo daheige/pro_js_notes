@@ -27,7 +27,8 @@ var page = 1,
 var list = [];
 //不满足条件的价格区间
 var other_zone = {
-    'price': 10
+    'price': 10,
+    'max' : 10e10
 };
 //get zone 获得价格区间
 while (true) {
@@ -50,10 +51,41 @@ while (true) {
                 'price': tmp[1].price
             }
         } else {
-            list[page] = other_zone;
+            list[page] = {
+                 'min' : tmp[0].id,
+                 'max' : other_zone.max,
+                 'price' : other_zone.price
+            }
         }
     }
     page++;
 }
 console.log(list);
+结果是：
+[
+{
+    min: 0,
+    max: 5.09,
+    price: 10
+},
+{
+    min: 5.09,
+    max: 7.9,
+    price: 8
+},
+{
+    min: 7.9,
+    max: 8.89,
+    price: 7
+},
+{
+    min: 8.89,
+    max: 9.07,
+    price: 6
+},
+{
+    min: 9.07,
+    max: 100000000000,
+    price: 10
+}];
 ```
